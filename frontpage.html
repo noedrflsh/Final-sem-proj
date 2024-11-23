@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analyzer & Report Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="frontpage.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class = "heading">
+        <h1>VendorVision</h1>
+        <h2>Sentiment Analysis report generator</h2>
+        </div>
+
+        <div class = "subheading">
+            <h3>Analyse to capitalise</h3>
+        </div>
+
+
+        <div class="form-group-container">
+                <!-- Country Dropdown -->
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country">
+                    <option value="India" selected>India</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Germany">Germany</option>
+                    <option value="France">France</option>
+                    <option value="Japan">Japan</option>
+                    <option value="China">China</option>
+                    <option value="Brazil">Brazil</option>
+                </select>
+            </div>
+
+            <!-- Language Dropdown -->
+            <div class="form-group">
+                <label for="language">Language:</label>
+                <select id="language">
+                    <option value="English" selected>English</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="French">French</option>
+                    <option value="German">German</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Portuguese">Portuguese</option>
+                    <option value="Russian">Russian</option>
+                    <option value="Korean">Korean</option>
+                </select>
+            </div>
+
+            <!-- City Dropdown -->
+            <div class="form-group">
+                <label for="city">City:</label>
+                <select id="city">
+                    <option value="Bangalore" selected>Bangalore</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Surat">Surat</option>
+                    <option value="Jaipur">Jaipur</option>
+                </select>
+            </div>
+            
+            <!-- Store Name Dropdown -->
+            <div class="form-group">
+                <label for="store-name">Store Name:</label>
+                <select id="store-name">
+                    <option value="Store1">Store 1</option>
+                    <option value="Store2">Store 2</option>
+                    <option value="Store3">Store 3</option>
+                    <option value="Store200">Store 200</option>
+                </select>
+            </div>
+
+            <!-- Branch Dropdown -->
+            <div class="form-group">
+                <label for="branch">Branch:</label>
+                <select id="branch">
+                    <option value="Main Branch" selected>Main Branch</option>
+                    <option value="North Branch">North Branch</option>
+                    <option value="South Branch">South Branch</option>
+                    <option value="East Branch">East Branch</option>
+                    <option value="West Branch">West Branch</option>
+                    <option value="Central Branch">Central Branch</option>
+                    <option value="International Branch">International Branch</option>
+                    <option value="Online Branch">Online Branch</option>
+                    <option value="Satellite Branch">Satellite Branch</option>
+                    <option value="Rural Branch">Rural Branch</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Store Details -->
+        <div class="form-group">
+            <label>Store Selected:</label>
+            <p id="store-selected">Pick out your store from the map below</p>
+        </div>
+
+        <!-- Map Placeholder -->
+        
+        <div id="map">
+        </div>
+       <div id="map-deets">
+            <p id="display-lat">Latitude: <span class="highlight">-</span></p>
+            <p id="display-lng">Longitude: <span class="highlight">-</span></p>
+    
+    <!-- Load Google Maps API after map controller -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCY4uvU1S51w8J9z18XTCDg5W8NrO3DNFw&callback=initMap" async defer ></script>
+    <script src="map.js"></script>
+
+        </div>
+
+        <!-- Additional Spacing for Map Image -->
+        <div style="height: 200px;">
+            <p style="text-align: center; color: #888; font-style: italic;">
+                Placeholder for map image or embed.
+            </p>
+        </div>
+
+        <!-- Analyze Button -->
+        <div class="form-group">
+            <button id="analyze-button">Analyze Store</button>
+        </div>
+    </div>
+
+    <script src="frontpage.js"></script>
+    
+    <div id="selected-store" class="selected-store">
+        <h3>Selected Store</h3>
+        <p>Name: <span id="store-name"></span></p>
+        <p>Address: <span id="store-address"></span></p>
+        <p>Coordinates: <span id="store-coords"></span></p>
+    </div>
+
+    <div id="map"></div>
+    <div id="location-details">
+    <p id="display-lat">Latitude: <span class="highlight">-</span></p>
+    <p id="display-lng">Longitude: <span class="highlight">-</span></p>
+    </div>
+    
+    
+    <!-- Load Google Maps API after map controller -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCY4uvU1S51w8J9z18XTCDg5W8NrO3DNFw&callback=initMap" async defer ></script>
+    <script src="map.js"></script>
+
+</body>
+</html>
